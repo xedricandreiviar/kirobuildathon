@@ -18,7 +18,11 @@ app.use((err, req, res, _next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Ready Ka Ba API running on http://localhost:${PORT}`);
-});
+// Start server (skip in Vercel serverless)
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`Ready Ka Ba API running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;

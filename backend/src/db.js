@@ -3,7 +3,11 @@ import { fileURLToPath } from 'node:url';
 import { JSONFilePreset } from 'lowdb/node';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DB_PATH = join(__dirname, '..', 'db.json');
+
+// On Vercel, filesystem is read-only except /tmp
+const DB_PATH = process.env.VERCEL === '1'
+  ? '/tmp/db.json'
+  : join(__dirname, '..', 'db.json');
 
 const defaultData = { cards: [] };
 
