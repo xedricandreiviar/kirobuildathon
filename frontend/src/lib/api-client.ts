@@ -2,6 +2,51 @@ import { API_TIMEOUT_MS, DEFAULT_API_URL } from "../constants";
 import type { CardPayload, CardResponse } from "../types";
 
 /**
+ * Fetches a card by ID.
+ *
+ * @param id - The card ID
+ * @returns The card data
+ * @throws Error with user-friendly message
+ */
+export async function getCard(id: string): Promise<CardResponse> {
+  const baseUrl = getBaseUrl();
+  const url = `${baseUrl}/api/cards/${id}`;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
+
+    if (response.status === 404) {
+      throw new Error("Card not found");
+    }
+
+    if (!response.ok) {
+      throw new Error("Failed to load card. Please try again.");
+    }
+
+    return await response.json();
+  } catch (error: unknown) {
+    clearTimeout(timeoutId);
+
+    if (error instanceof Error) {
+      if (
+        error.message === "Card not found" ||
+        error.message === "Failed to load card. Please try again."
+      ) {
+        throw error;
+      }
+      if (error.name === "AbortError" || error.message.includes("aborted")) {
+        throw new Error("Request timed out. Please try again.");
+      }
+    }
+    throw new Error("Unable to reach the server. Check your connection and try again.");
+  }
+}
+
+/**
  * Determines the base URL for the API.
  * Uses VITE_API_URL environment variable if defined and non-empty,
  * otherwise falls back to DEFAULT_API_URL.
