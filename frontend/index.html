@@ -1,14 +1,101 @@
 <!doctype html>
-<html lang="en">
+<html class="light" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ready Ka Ba? — Emergency Medical Card</title>
+    <title>Emergency Profile Intake - Ready Ka Ba?</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fb",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "secondary": "#b6171e",
+              "tertiary-container": "#3b0900",
+              "secondary-container": "#da3433",
+              "error": "#ba1a1a",
+              "background": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "primary": "#000000",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#131b2e",
+              "surface-tint": "#565e74",
+              "surface-container-low": "#f2f4f6",
+              "surface-container": "#eceef0",
+              "surface-variant": "#e0e3e5",
+              "primary-container": "#131b2e",
+              "surface-dim": "#d8dadc",
+              "tertiary-fixed": "#ffdbd1",
+              "on-secondary-fixed-variant": "#930010",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#bec6e0",
+              "on-secondary-container": "#fffbff",
+              "on-tertiary-fixed-variant": "#862200",
+              "secondary-fixed": "#ffdad6",
+              "primary-fixed-dim": "#bec6e0",
+              "primary-fixed": "#dae2fd",
+              "secondary-fixed-dim": "#ffb3ac",
+              "on-tertiary-fixed": "#3b0900",
+              "surface-container-lowest": "#ffffff",
+              "outline-variant": "#c6c6cd",
+              "outline": "#76777d",
+              "on-surface-variant": "#45464d",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1e",
+              "tertiary": "#000000",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-secondary-fixed": "#410003",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3133",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#7c839b",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-container": "#ed4a14",
+              "surface": "#f7f9fb",
+              "surface-container-high": "#e6e8ea"
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem"
+            },
+            spacing: {
+              unit: "4px",
+              "section-gap": "40px",
+              "margin-mobile": "16px",
+              "margin-desktop": "48px",
+              gutter: "24px",
+              "component-gap": "16px"
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"]
+            },
+            fontSize: {
+              "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+              "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-background text-on-background font-sans antialiased min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
