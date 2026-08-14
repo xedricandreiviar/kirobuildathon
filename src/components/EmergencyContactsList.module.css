@@ -1,0 +1,88 @@
+.contactsSection {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.sectionLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+}
+
+.contactsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contactItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contactName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.contactRelationship {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.contactPhone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1976d2;
+  text-decoration: none;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.contactPhone:hover {
+  background-color: #bbdefb;
+}
+
+.contactPhone:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .contactsSection {
+    padding: 0.75rem;
+  }
+}
