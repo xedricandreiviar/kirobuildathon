@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors from Stitch design system */
+  --color-surface-bright: #f7f9fb;
+  --color-secondary: #b6171e;
+  --color-secondary-container: #da3433;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-background: #f7f9fb;
+  --color-on-surface: #191c1e;
+  --color-primary: #000000;
+  --color-on-error-container: #93000a;
+  --color-surface-tint: #565e74;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-variant: #e0e3e5;
+  --color-primary-container: #131b2e;
+  --color-surface-dim: #d8dadc;
+  --color-on-secondary-container: #fffbff;
+  --color-on-secondary-fixed-variant: #930010;
+  --color-secondary-fixed: #ffdad6;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #c6c6cd;
+  --color-outline: #76777d;
+  --color-on-surface-variant: #45464d;
+  --color-on-primary: #ffffff;
+  --color-on-background: #191c1e;
+  --color-on-error: #ffffff;
+  --color-surface-container-highest: #e0e3e5;
+  --color-on-secondary: #ffffff;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+  --color-surface: #f7f9fb;
+  --color-surface-container-high: #e6e8ea;
+
+  /* Spacing */
+  --spacing-unit: 4px;
+  --spacing-section-gap: 40px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 48px;
+  --spacing-gutter: 24px;
+  --spacing-component-gap: 16px;
+
+  /* Font family */
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
